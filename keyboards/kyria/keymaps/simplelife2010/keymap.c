@@ -22,6 +22,24 @@ enum layers {
     _ADJUST
 };
 
+// Left-hand home row mods
+#define HOME_A LCTL_T(KC_A)
+#define HOME_S LALT_T(KC_S)
+#define HOME_D LGUI_T(KC_D)
+#define HOME_F LSFT_T(KC_F)
+
+// Right-hand home row mods
+#define HOME_J RSFT_T(KC_J)
+#define HOME_K RGUI_T(KC_K)
+#define HOME_L RALT_T(KC_L)
+#define HOME_SCLN RCTL_T(KC_SCLN)
+
+// Left-hand home row mods (raise)
+#define RAISE_A LCTL_T(KC_MINS)
+#define RAISE_S LALT_T(KC_EQL)
+#define RAISE_D LGUI_T(KC_LBRC)
+#define RAISE_F LSFT_T(KC_RBRC)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * Base Layer: QWERTY
@@ -37,10 +55,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
-      KC_TAB,  KC_Q        , KC_W,         KC_E,         KC_R,         KC_T,                                           KC_Y,        KC_U,         KC_I,         KC_O,         KC_P,            KC_BSPC,
-      KC_ESC,  LCTL_T(KC_A), LALT_T(KC_S), LGUI_T(KC_D), LSFT_T(KC_F), KC_G,                                           KC_H,        LSFT_T(KC_J), LGUI_T(KC_K), LALT_T(KC_L), LCTL_T(KC_SCLN), KC_QUOT,
-      KC_LSFT, KC_Z        , KC_X,         KC_C,         KC_V,         KC_B,       KC_LALT, KC_NO,   KC_NO,   KC_RALT, KC_N,        KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,         KC_SFTENT,
-                                           KC_NO,        KC_LGUI,      MO(_LOWER), KC_SPC,  KC_LCTL, KC_RCTL, KC_SPC,  MO(_RAISE),  KC_RGUI,      KC_NO
+      KC_TAB,  KC_Q,   KC_W,   KC_E,   KC_R,    KC_T,                                           KC_Y,       KC_U,    KC_I,    KC_O,   KC_P,      KC_BSPC,
+      KC_ESC,  HOME_A, HOME_S, HOME_D, HOME_F,  KC_G,                                           KC_H,       HOME_J,  HOME_K,  HOME_L, HOME_SCLN, KC_QUOT,
+      KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,    KC_B,       KC_LALT, KC_NO,   KC_NO,   KC_RALT, KC_N,       KC_M,    KC_COMM, KC_DOT, KC_SLSH,   KC_SFTENT,
+                               KC_NO,  KC_LGUI, MO(_LOWER), KC_SPC,  KC_LCTL, KC_RCTL, KC_SPC,  MO(_RAISE), KC_RGUI, KC_NO
     ),
 /*
  * Lower Layer: Symbols
@@ -67,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |   `    |   1  |  2   |  3   |  4   |  5   |                              |  6   |  7   |  8   |  9   |  0   |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |  -   | =    | [    | ]    |      |                              | Left | Down | Up   | Right|      |   \    |
+ * |        |-/Ctrl|=/Alt |[/GUI |]/Sft |      |                              | Left | Down | Up   | Right|      |   \    |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
@@ -76,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_RAISE] = LAYOUT(
       KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-      _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, _______,                                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_BSLS,
+      _______, RAISE_A, RAISE_S, RAISE_D, RAISE_F, _______,                                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_BSLS,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
