@@ -39,24 +39,24 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT(
-		KC_ESC,   KC_Q,     KC_W,     KC_E,   KC_R,    KC_T,          KC_Y,    KC_U,     KC_I,   KC_O,    KC_P,      KC_DEL, KC_BSPC,
-		KC_TAB,   HOME_A,   HOME_S,   HOME_D, HOME_F,  KC_G,          KC_H,    HOME_J,   HOME_K, HOME_L,  HOME_SCLN, KC_ENT,
-		KC_LSFT,  KC_Z,     KC_X,     KC_C,   KC_V,    KC_B,          MO(3),   KC_N,     KC_M,   KC_COMM, KC_DOT,    KC_SLSH, KC_LSFT,
-		KC_LCTL,  KC_LALT,                    KC_LCMD, SPC_LWR,       SPC_RSE, KC_RCMD,                              KC_RALT, KC_RCTL
+		KC_ESC,    KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,             KC_Y,      KC_U,       KC_I,      KC_O,      KC_P,      KC_DEL,    KC_BSPC,
+		KC_TAB,    HOME_A,    HOME_S,    HOME_D,    HOME_F,    KC_G,             KC_H,      HOME_J,     HOME_K,    HOME_L,    HOME_SCLN, KC_ENT,
+		KC_LSFT,   KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,             MO(3),     KC_N,       KC_M,      KC_COMM,   KC_DOT,    KC_SLSH,   KC_LSFT,
+		KC_LCTL,   KC_LALT,                         KC_LCMD,   SPC_LWR,          SPC_RSE,   KC_RCMD,                                     KC_RALT,   KC_RCTL
     ),
 
     LAYOUT(
 		KC_TILD,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,    KC_PERC,          KC_CIRC,   KC_AMPR,    KC_ASTR,   KC_LPRN,   KC_RPRN,   _______,   _______,
 		_______,   KC_UNDS,   KC_PLUS,   KC_LCBR,   KC_RCBR,   KC_DQUO,          KC_MS_L,   KC_MS_D,    KC_MS_U,   KC_MS_R,   _______,   KC_PIPE,
-		_______,   _______,   _______,   _______,   _______,   _______,          _______,   _______,    _______,   _______,   _______,   _______,   _______,
+		_______,   _______,   _______,   _______,   KC_VOLD,   KC_BRID,          _______,   _______,    KC_MUTE,   _______,   _______,   _______,   _______,
 		_______,   _______,                         _______,   _______,          KC_BTN1,   KC_BTN2,                                     _______,   _______
     ),
 
     LAYOUT(
-		KC_GRV,   KC_1,      KC_2,      KC_3,      KC_4,       KC_5,             KC_6,      KC_7,       KC_8,      KC_9,      KC_0,      _______,   _______,
-		_______,  RAISE_A,   RAISE_S,   RAISE_D,   RAISE_F,    KC_QUOT,          KC_LEFT,   KC_DOWN,    KC_UP,     KC_RGHT,   _______,   KC_BSLS,
-		_______,  _______,   _______,   _______,   _______,    _______,          _______,   _______,    _______,   _______,   _______,   _______,   _______,
-		_______,  _______,                         _______,    _______,	         _______,   _______,                                     _______,   _______
+		KC_GRV,    KC_1,      KC_2,      KC_3,      KC_4,      KC_5,             KC_6,      KC_7,       KC_8,      KC_9,      KC_0,      _______,   _______,
+		_______,   RAISE_A,   RAISE_S,   RAISE_D,   RAISE_F,   KC_QUOT,          KC_LEFT,   KC_DOWN,    KC_UP,     KC_RGHT,   _______,   KC_BSLS,
+		_______,   _______,   _______,   _______,   KC_VOLU,   KC_BRIU,          _______,   _______,    KC_MUTE,   _______,   _______,   _______,   _______,
+		_______,   _______,                         _______,   _______,	         _______,   _______,                                     _______,   _______
     ),
 
     LAYOUT(
