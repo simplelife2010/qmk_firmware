@@ -33,6 +33,12 @@
 #define RAISE_D LGUI_T(KC_LBRC)
 #define RAISE_F LSFT_T(KC_RBRC)
 
+// Right-hand home row mods (raise)
+#define RAISE_J RSFT_T(KC_DOWN)
+#define RAISE_K RGUI_T(KC_UP)
+#define RAISE_L RALT_T(KC_RGHT)
+#define RAISE_SCLN RCTL_T(KC_NO)
+
 // Space-Lower/Raise
 #define SPC_LWR LT(1, KC_SPC)
 #define SPC_RSE LT(2, KC_SPC)
@@ -53,10 +59,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     LAYOUT(
-		KC_GRV,    KC_1,      KC_2,      KC_3,      KC_4,      KC_5,             KC_6,      KC_7,       KC_8,      KC_9,      KC_0,      _______,   _______,
-		_______,   RAISE_A,   RAISE_S,   RAISE_D,   RAISE_F,   KC_QUOT,          KC_LEFT,   KC_DOWN,    KC_UP,     KC_RGHT,   _______,   KC_BSLS,
-		_______,   _______,   _______,   _______,   KC_VOLU,   KC_BRIU,          _______,   _______,    KC_MUTE,   _______,   _______,   _______,   _______,
-		_______,   _______,                         _______,   _______,	         _______,   _______,                                     _______,   _______
+		KC_GRV,    KC_1,      KC_2,      KC_3,      KC_4,      KC_5,             KC_6,      KC_7,       KC_8,      KC_9,      KC_0,       _______,   _______,
+		_______,   RAISE_A,   RAISE_S,   RAISE_D,   RAISE_F,   KC_QUOT,          KC_LEFT,   RAISE_J,    RAISE_K,   RAISE_L,   RAISE_SCLN, KC_BSLS,
+		_______,   _______,   _______,   _______,   KC_VOLU,   KC_BRIU,          _______,   _______,    KC_MUTE,   _______,   _______,    _______,   _______,
+		_______,   _______,                         _______,   _______,	         _______,   _______,                                      _______,   _______
     ),
 
     LAYOUT(
