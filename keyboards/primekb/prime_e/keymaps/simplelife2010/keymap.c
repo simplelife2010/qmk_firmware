@@ -43,10 +43,13 @@
 #define SPC_LWR LT(1, KC_SPC)
 #define SPC_RSE LT(2, KC_SPC)
 
+// Tab/Hyper
+#define TAB_HYP HYPR_T(KC_TAB)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT(
 		KC_ESC,    KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,             KC_Y,      KC_U,       KC_I,      KC_O,      KC_P,      KC_DEL,    KC_BSPC,
-		KC_TAB,    HOME_A,    HOME_S,    HOME_D,    HOME_F,    KC_G,             KC_H,      HOME_J,     HOME_K,    HOME_L,    HOME_SCLN, KC_ENT,
+		TAB_HYP,   HOME_A,    HOME_S,    HOME_D,    HOME_F,    KC_G,             KC_H,      HOME_J,     HOME_K,    HOME_L,    HOME_SCLN, KC_ENT,
 		KC_LSFT,   KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,             MO(3),     KC_N,       KC_M,      KC_COMM,   KC_DOT,    KC_SLSH,   KC_LSFT,
 		KC_LCTL,   KC_LALT,                         KC_LCMD,   SPC_LWR,          SPC_RSE,   KC_RCMD,                                     KC_RALT,   KC_RCTL
     ),
