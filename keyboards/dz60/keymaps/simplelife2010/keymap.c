@@ -4,7 +4,6 @@
 #define ES_HY_M TD(TD_ES_HY_M)
 #define HYPR_MODS (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT) | MOD_BIT(KC_LOPT) | MOD_BIT(KC_LGUI))
 
-// Define a type for as many tap dance states as you need
 typedef enum {
     TD_NONE,
     TD_UNKNOWN,

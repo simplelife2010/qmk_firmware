@@ -2,6 +2,7 @@
 
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 150
+#define TAPPING_TERM_PER_KEY
 
 #ifdef MOUSEKEY_ENABLE
     #define MOUSEKEY_DELAY             0   // Dflt: 300, Delay btw. pressing a key and movement
