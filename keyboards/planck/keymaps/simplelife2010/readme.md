@@ -1,2 +1,2 @@
-# The Default Planck Layout
+# simplelife2010 Planck Layout
 

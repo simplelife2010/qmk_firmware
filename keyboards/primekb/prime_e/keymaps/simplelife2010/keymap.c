@@ -1,145 +1,44 @@
-/* Copyright 2018 Holten Campbell
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 #include QMK_KEYBOARD_H
+#include "simplelife2010.h"
 
-#define L2_SPC  LT(2, KC_SPC)
-#define ES_HY_M TD(TD_ES_HY_M)
-#define HYPR_MODS (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT) | MOD_BIT(KC_LOPT) | MOD_BIT(KC_LGUI))
-
-typedef enum {
-    TD_NONE,
-    TD_UNKNOWN,
-    TD_SINGLE_TAP,
-    TD_SINGLE_HOLD,
-    TD_DOUBLE_HOLD
-} td_state_t;
-
-typedef struct {
-    bool is_press_action;
-    td_state_t state;
-} td_tap_t;
-
-enum {
-    TD_ES_HY_M, // Our custom tap dance key; add any other tap dance keys to this enum 
-};
-
-// Function associated with all tap dances
-td_state_t cur_dance(qk_tap_dance_state_t *state);
-
-// Functions associated with individual tap dances
-void eshym_finished(qk_tap_dance_state_t *state, void *user_data);
-void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
+#define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    LAYOUT(
-		KC_TAB,   KC_Q,     KC_W,     KC_E,   KC_R,    KC_T,          KC_Y,   KC_U,     KC_I, KC_O,    KC_P,    KC_DEL, KC_BSPC,
-		ES_HY_M,  KC_A,     KC_S,     KC_D,   KC_F,    KC_G,          KC_H,   KC_J,     KC_K, KC_L,    KC_SCLN, KC_ENT,
-		KC_LSFT,  KC_Z,     KC_X,     KC_C,   KC_V,    KC_B,          MO(3),  KC_N,     KC_M, KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-		KC_LCTL,  KC_LALT,                    KC_LCMD, MO(1),         L2_SPC, KC_RCMD,                          KC_RALT, KC_RCTL
+    [_QWERTY] = LAYOUT_wrapper(
+        _ROW1_QWERTY_40PERCENT_ESC_SPLIT_BSPC,
+        _ROW2_QWERTY_40PERCENT_TAB,
+        _ROW3_QWERTY_40PERCENT_DOUBLE_B,
+        _ROW4_QWERTY_40PERCENT_3MODS_2SPC_
     ),
 
-    LAYOUT(
-		KC_TILD,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,     KC_PERC,          KC_CIRC,   KC_AMPR,    KC_ASTR,   KC_LPRN,   KC_RPRN,   _______,  _______,
-		_______,   KC_UNDS,   KC_PLUS,   KC_LCBR,   KC_RCBR,    KC_DQUO,          XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_PIPE,
-		XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX,          XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,
-		XXXXXXX,   XXXXXXX,                         XXXXXXX,    XXXXXXX,          XXXXXXX,   XXXXXXX,                                     XXXXXXX,  XXXXXXX
+    [_LOWER] = LAYOUT_wrapper(
+        _ROW1_LOWER_40PERCENT_ESC_SPLIT_BSPC,
+        _ROW2_LOWER_40PERCENT_,
+        _ROW3_LOWER_40PERCENT_DOUBLE_B,
+        _ROW4_LOWER_40PERCENT_3MODS_2SPC_
     ),
 
-    LAYOUT(
-		KC_GRV,   KC_1,      KC_2,      KC_3,      KC_4,       KC_5,              KC_6,      KC_7,       KC_8,      KC_9,      KC_0,      XXXXXXX,  XXXXXXX,
-		_______,  KC_MINS,   KC_EQL,    KC_LBRC,   KC_RBRC,    KC_QUOT,           KC_LEFT,   KC_DOWN,    KC_UP,     KC_RIGHT,  XXXXXXX,   KC_BSLS,
-		_______,  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX,           XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,  _______,
-		XXXXXXX,  _______,                         _______,    XXXXXXX,	          XXXXXXX,   _______,                                     _______,  XXXXXXX
+    [_RAISE] = LAYOUT_wrapper(
+        _ROW1_RAISE_40PERCENT_ESC_SPLIT_BSPC,
+        _ROW2_RAISE_40PERCENT_,
+        _ROW3_RAISE_40PERCENT_DOUBLE_B,
+        _ROW4_RAISE_40PERCENT_3MODS_2SPC_
     ),
 
-    LAYOUT(
-		RESET,    KC_F1,     KC_F2,     KC_F3,     KC_F4,      KC_F5,             KC_F6,     KC_F7,      KC_F8,     KC_F9,     KC_F10,    KC_F11,   KC_F12,
-		_______,  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX,           XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,
-		XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX,           XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,
-		XXXXXXX,  XXXXXXX,                         XXXXXXX,    XXXXXXX,	          XXXXXXX,   XXXXXXX,                                     XXXXXXX,  XXXXXXX
+    [_ADJUST] = LAYOUT_wrapper(
+        _ROW1_ADJUST_40PERCENT_ESC_SPLIT_BSPC,
+        _ROW2_ADJUST_40PERCENT_,
+        _ROW3_ADJUST_40PERCENT_DOUBLE_B,
+        _ROW4_ADJUST_40PERCENT_3MODS_2SPC_
     ),
 
-    LAYOUT(
-		XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX,           XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,
-		XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX,           KC_MS_L,   KC_MS_D,    KC_MS_U,   KC_MS_R,   KC_BTN2,   XXXXXXX,
-		XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,    XXXXXXX,           XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,  XXXXXXX,
-		XXXXXXX,  XXXXXXX,                         XXXXXXX,    XXXXXXX,	          KC_BTN1,   XXXXXXX,                                     XXXXXXX,  XXXXXXX
+    [_MOUSE] = LAYOUT_wrapper(
+        _ROW1_MOUSE_40PERCENT_ESC_SPLIT_BSPC,
+        _ROW2_MOUSE_40PERCENT_,
+        _ROW3_MOUSE_40PERCENT_DOUBLE_B,
+        _ROW4_MOUSE_40PERCENT_3MODS_2SPC_
     )
 };
-
-// Determine the current tap dance state
-td_state_t cur_dance(qk_tap_dance_state_t *state) {
-    if (state->count == 1) {
-        if (!state->pressed) return TD_SINGLE_TAP;
-        else return TD_SINGLE_HOLD;
-    } else if (state->count == 2) return TD_DOUBLE_HOLD;
-    else return TD_UNKNOWN;
-}
-
-// Initialize tap structure associated with example tap dance key
-static td_tap_t eshym_tap_state = {
-    .is_press_action = true,
-    .state = TD_NONE
-};
-
-// Functions that control what our tap dance key does
-void eshym_finished(qk_tap_dance_state_t *state, void *user_data) {
-    eshym_tap_state.state = cur_dance(state);
-    switch (eshym_tap_state.state) {
-        case TD_SINGLE_TAP:
-            tap_code(KC_ESC);
-            break;
-        case TD_SINGLE_HOLD:
-            register_mods(HYPR_MODS);
-            break;
-        case TD_DOUBLE_HOLD:
-            layer_on(4);
-            break;
-        default:
-            break;
-    }
-}
-
-void eshym_reset(qk_tap_dance_state_t *state, void *user_data) {
-    switch (eshym_tap_state.state) {
-        case TD_SINGLE_HOLD:
-            unregister_mods(HYPR_MODS);
-            break;
-        case TD_DOUBLE_HOLD:
-            layer_off(4);
-            break;
-        default:
-            break;
-    }
-    eshym_tap_state.state = TD_NONE;
-}
-
-// Associate our tap dance key with its functionality
-qk_tap_dance_action_t tap_dance_actions[] = {
-    [TD_ES_HY_M] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, eshym_finished, eshym_reset)
-};
-
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case ES_HY_M:
-            return 175;
-        default:
-            return TAPPING_TERM;
-    }
-}
 
 void matrix_init_user(void) {
   // set CapsLock LED to output and low
