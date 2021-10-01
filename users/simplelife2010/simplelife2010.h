@@ -12,8 +12,7 @@ enum userspace_layers {
 
 // Tap dances
 enum {
-    TD_ES_HY_M, // Single tap: Escape, single hold: Hyper, double hold: Mouse layer
-    TD_TA_HY_M  // Single tap: Tab, single hold: Hyper, double hold: Mouse layer
+    TD_ES_HY_M // Single tap: Escape, single hold: Hyper, double hold: Mouse layer
 };
 
 typedef enum {
@@ -32,15 +31,13 @@ typedef struct {
 td_state_t cur_dance(qk_tap_dance_state_t *state);
 
 void eshym_finished(qk_tap_dance_state_t *state, void *user_data);
-void tahym_finished(qk_tap_dance_state_t *state, void *user_data);
-void xxhym_reset(qk_tap_dance_state_t *state, void *user_data);
+void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 
 #define HYPER_MODS (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT) | MOD_BIT(KC_LOPT) | MOD_BIT(KC_LGUI))
 #define LOWER MO(_LOWER)
 #define RSE_SPC LT(_RAISE, KC_SPC)
 #define ADJUST MO(_ADJUST)
 #define ES_HY_M TD(TD_ES_HY_M)
-#define TA_HY_M TD(TD_TA_HY_M)
 
 #define _VIM_NAV_KEYS_   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 #define _MOUSE_NAV_KEYS_ KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
@@ -72,51 +69,51 @@ void xxhym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _DOUBLE_SPACEBAR_ADJUST_RIGHT_ _______, ADJUST
 #define _DOUBLE_SPACEBAR_BTN1_RIGHT_   _______, KC_BTN1
 
-#define _ROW1_QWERTY_40PERCENT_               KC_TAB,        _QWERTY1_,                      KC_BSPC
-#define _ROW1_QWERTY_40PERCENT_ESC_SPLIT_BSPC KC_ESC,        _QWERTY1_,                      KC_DEL, KC_BSPC
-#define _ROW2_QWERTY_40PERCENT_               ES_HY_M,       _QWERTY2_,                      KC_ENT
-#define _ROW2_QWERTY_40PERCENT_TAB            TA_HY_M,       _QWERTY2_,                      KC_ENT
-#define _ROW3_QWERTY_40PERCENT_               KC_LSFT,       _QWERTY3_,                      KC_RSFT
-#define _ROW3_QWERTY_40PERCENT_DOUBLE_B       KC_LSFT,       _QWERTY3L_, ADJUST, _QWERTY3R_, KC_RSFT
-#define _ROW4_QWERTY_40PERCENT_4MODS_2SPC_    _4_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_, _4_MODS_RIGHT_
-#define _ROW4_QWERTY_40PERCENT_3MODS_2SPC_    _3_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_, _3_MODS_RIGHT_
-#define _ROW4_QWERTY_40PERCENT_2MODS_2SPC_    _2_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_, _2_MODS_RIGHT_
+#define _ROW1_QWERTY_40PERCENT_                KC_TAB,        _QWERTY1_,                      KC_BSPC
+#define _ROW1_QWERTY_40PERCENT_ESC_SPLIT_BSPC_ ES_HY_M,       _QWERTY1_,                      KC_DEL, KC_BSPC
+#define _ROW2_QWERTY_40PERCENT_                ES_HY_M,       _QWERTY2_,                      KC_ENT
+#define _ROW2_QWERTY_40PERCENT_TAB             KC_TAB,        _QWERTY2_,                      KC_ENT
+#define _ROW3_QWERTY_40PERCENT_                KC_LSFT,       _QWERTY3_,                      KC_RSFT
+#define _ROW3_QWERTY_40PERCENT_DOUBLE_B        KC_LSFT,       _QWERTY3L_, ADJUST, _QWERTY3R_, KC_RSFT
+#define _ROW4_QWERTY_40PERCENT_4MODS_2SPC_     _4_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_, _4_MODS_RIGHT_
+#define _ROW4_QWERTY_40PERCENT_3MODS_2SPC_     _3_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_, _3_MODS_RIGHT_
+#define _ROW4_QWERTY_40PERCENT_2MODS_2SPC_     _2_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_, _2_MODS_RIGHT_
 
-#define _ROW1_LOWER_40PERCENT_               _______,    _SHIFTED_NUMBERS_,               _______
-#define _ROW1_LOWER_40PERCENT_ESC_SPLIT_BSPC _______,    _SHIFTED_NUMBERS_,               _______, _______
-#define _ROW2_LOWER_40PERCENT_               _______,    _LOWER_SYMBOLS_R2_,              KC_PIPE
-#define _ROW3_LOWER_40PERCENT_               _______,    _10_BLANKS_,                     _______
-#define _ROW3_LOWER_40PERCENT_DOUBLE_B       _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
-#define _ROW4_LOWER_40PERCENT_4MODS_2SPC_    _4_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_RIGHT_,  _4_BLANKS_
-#define _ROW4_LOWER_40PERCENT_3MODS_2SPC_    _3_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_RIGHT_,  _3_BLANKS_
-#define _ROW4_LOWER_40PERCENT_2MODS_2SPC_    _2_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_RIGHT_,  _2_BLANKS_
+#define _ROW1_LOWER_40PERCENT_                _______,    _SHIFTED_NUMBERS_,               _______
+#define _ROW1_LOWER_40PERCENT_ESC_SPLIT_BSPC_ _______,    _SHIFTED_NUMBERS_,               _______, _______
+#define _ROW2_LOWER_40PERCENT_                _______,    _LOWER_SYMBOLS_R2_,              KC_PIPE
+#define _ROW3_LOWER_40PERCENT_                _______,    _10_BLANKS_,                     _______
+#define _ROW3_LOWER_40PERCENT_DOUBLE_B        _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
+#define _ROW4_LOWER_40PERCENT_4MODS_2SPC_     _4_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_RIGHT_,  _4_BLANKS_
+#define _ROW4_LOWER_40PERCENT_3MODS_2SPC_     _3_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_RIGHT_,  _3_BLANKS_
+#define _ROW4_LOWER_40PERCENT_2MODS_2SPC_     _2_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_RIGHT_,  _2_BLANKS_
 
-#define _ROW1_RAISE_40PERCENT_               _______,    _NUMBERS_,                       _______
-#define _ROW1_RAISE_40PERCENT_ESC_SPLIT_BSPC _______,    _NUMBERS_,                       _______, _______
-#define _ROW2_RAISE_40PERCENT_               _______,    _RAISE_SYMBOLS_R2_,              KC_BSLS
-#define _ROW3_RAISE_40PERCENT_               _______,    _10_BLANKS_,                     _______
-#define _ROW3_RAISE_40PERCENT_DOUBLE_B       _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
-#define _ROW4_RAISE_40PERCENT_4MODS_2SPC_    _4_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_LEFT_,   _4_BLANKS_
-#define _ROW4_RAISE_40PERCENT_3MODS_2SPC_    _3_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_LEFT_,   _3_BLANKS_
-#define _ROW4_RAISE_40PERCENT_2MODS_2SPC_    _2_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_LEFT_,   _2_BLANKS_
+#define _ROW1_RAISE_40PERCENT_                _______,    _NUMBERS_,                       _______
+#define _ROW1_RAISE_40PERCENT_ESC_SPLIT_BSPC_ _______,    _NUMBERS_,                       _______, _______
+#define _ROW2_RAISE_40PERCENT_                _______,    _RAISE_SYMBOLS_R2_,              KC_BSLS
+#define _ROW3_RAISE_40PERCENT_                _______,    _10_BLANKS_,                     _______
+#define _ROW3_RAISE_40PERCENT_DOUBLE_B        _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
+#define _ROW4_RAISE_40PERCENT_4MODS_2SPC_     _4_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_LEFT_,   _4_BLANKS_
+#define _ROW4_RAISE_40PERCENT_3MODS_2SPC_     _3_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_LEFT_,   _3_BLANKS_
+#define _ROW4_RAISE_40PERCENT_2MODS_2SPC_     _2_BLANKS_, _DOUBLE_SPACEBAR_ADJUST_LEFT_,   _2_BLANKS_
 
-#define _ROW1_ADJUST_40PERCENT_               RESET,      _F_KEYS_1_TO_10_, KC_F11
-#define _ROW1_ADJUST_40PERCENT_ESC_SPLIT_BSPC RESET,      _F_KEYS_1_TO_10_, KC_F11, KC_F12
-#define _ROW2_ADJUST_40PERCENT_               _______,    _10_BLANKS_,      _______
-#define _ROW3_ADJUST_40PERCENT_               _______,    _10_BLANKS_,      _______
-#define _ROW3_ADJUST_40PERCENT_DOUBLE_B       _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
-#define _ROW4_ADJUST_40PERCENT_4MODS_2SPC_    _4_BLANKS_, _______, _______, _4_BLANKS_
-#define _ROW4_ADJUST_40PERCENT_3MODS_2SPC_    _3_BLANKS_, _______, _______, _3_BLANKS_
-#define _ROW4_ADJUST_40PERCENT_2MODS_2SPC_    _2_BLANKS_, _______, _______, _2_BLANKS_
+#define _ROW1_ADJUST_40PERCENT_                RESET,      _F_KEYS_1_TO_10_, KC_F11
+#define _ROW1_ADJUST_40PERCENT_ESC_SPLIT_BSPC_ RESET,      _F_KEYS_1_TO_10_, KC_F11, KC_F12
+#define _ROW2_ADJUST_40PERCENT_                _______,    _10_BLANKS_,      _______
+#define _ROW3_ADJUST_40PERCENT_                _______,    _10_BLANKS_,      _______
+#define _ROW3_ADJUST_40PERCENT_DOUBLE_B        _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
+#define _ROW4_ADJUST_40PERCENT_4MODS_2SPC_     _4_BLANKS_, _______, _______, _4_BLANKS_
+#define _ROW4_ADJUST_40PERCENT_3MODS_2SPC_     _3_BLANKS_, _______, _______, _3_BLANKS_
+#define _ROW4_ADJUST_40PERCENT_2MODS_2SPC_     _2_BLANKS_, _______, _______, _2_BLANKS_
                                                    
-#define _ROW1_MOUSE_40PERCENT_               _______,    _10_BLANKS_, _______
-#define _ROW1_MOUSE_40PERCENT_ESC_SPLIT_BSPC _______,    _10_BLANKS_, _______, _______
-#define _ROW2_MOUSE_40PERCENT_               _______,    _5_BLANKS_, _MOUSE_NAV_KEYS_, KC_BTN2,   _______
-#define _ROW3_MOUSE_40PERCENT_               _______,    _10_BLANKS_, _______
-#define _ROW3_MOUSE_40PERCENT_DOUBLE_B       _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
-#define _ROW4_MOUSE_40PERCENT_4MODS_2SPC_    _4_BLANKS_, _DOUBLE_SPACEBAR_BTN1_RIGHT_, _4_BLANKS_
-#define _ROW4_MOUSE_40PERCENT_3MODS_2SPC_    _3_BLANKS_, _DOUBLE_SPACEBAR_BTN1_RIGHT_, _3_BLANKS_
-#define _ROW4_MOUSE_40PERCENT_2MODS_2SPC_    _2_BLANKS_, _DOUBLE_SPACEBAR_BTN1_RIGHT_, _2_BLANKS_
+#define _ROW1_MOUSE_40PERCENT_                _______,    _10_BLANKS_, _______
+#define _ROW1_MOUSE_40PERCENT_ESC_SPLIT_BSPC_ _______,    _10_BLANKS_, _______, _______
+#define _ROW2_MOUSE_40PERCENT_                _______,    _5_BLANKS_, _MOUSE_NAV_KEYS_, KC_BTN2,   _______
+#define _ROW3_MOUSE_40PERCENT_                _______,    _10_BLANKS_, _______
+#define _ROW3_MOUSE_40PERCENT_DOUBLE_B        _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
+#define _ROW4_MOUSE_40PERCENT_4MODS_2SPC_     _4_BLANKS_, _DOUBLE_SPACEBAR_BTN1_RIGHT_, _4_BLANKS_
+#define _ROW4_MOUSE_40PERCENT_3MODS_2SPC_     _3_BLANKS_, _DOUBLE_SPACEBAR_BTN1_RIGHT_, _3_BLANKS_
+#define _ROW4_MOUSE_40PERCENT_2MODS_2SPC_     _2_BLANKS_, _DOUBLE_SPACEBAR_BTN1_RIGHT_, _2_BLANKS_
 
 #define _ROW1_QWERTY_60PERCENT_               KC_GRV,  _NUMBERS_, KC_MINS, KC_EQL,  KC_BSPC
 #define _ROW2_QWERTY_60PERCENT_               KC_TAB,  _QWERTY1_, KC_LBRC, KC_RBRC, KC_BSLS
@@ -130,7 +127,7 @@ void xxhym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _ROW4_RAISE_60PERCENT_               _______, _10_BLANKS_, _______
 #define _ROW5_RAISE_60PERCENT_3_4_MODS_1SPC_ _3_BLANKS_, _______, _4_BLANKS_
 
-#define _ROW1_ADJUST_60PERCENT_               _______, _F_KEYS_1_TO_10_, KC_F11, KC_F12, KC_F13
+#define _ROW1_ADJUST_60PERCENT_               RESET,   _F_KEYS_1_TO_10_, KC_F11, KC_F12, KC_F13
 #define _ROW2_ADJUST_60PERCENT_               _______, _10_BLANKS_, _3_BLANKS_
 #define _ROW3_ADJUST_60PERCENT_               _______, _5_BLANKS_,  _4_BLANKS_, _3_BLANKS_
 #define _ROW4_ADJUST_60PERCENT_               _______, _10_BLANKS_, _______
