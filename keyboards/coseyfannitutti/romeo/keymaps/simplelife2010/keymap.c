@@ -1,0 +1,42 @@
+#include QMK_KEYBOARD_H
+#include "simplelife2010.h"
+
+#define LAYOUT_all_wrapper(...) LAYOUT_all(__VA_ARGS__)
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [_QWERTY] = LAYOUT_all_wrapper(
+        _ROW1_QWERTY_40PERCENT_,
+        _ROW2_QWERTY_40PERCENT_WO_SCLN_,
+        _ROW3_QWERTY_40PERCENT_WO_SLASH_,
+        _ROW4_QWERTY_40PERCENT_3MODS_3SPC_
+    ),
+
+    [_LOWER] = LAYOUT_all_wrapper(
+        _ROW1_LOWER_40PERCENT_,
+        _ROW2_LOWER_40PERCENT_WO_SCLN_,
+        _ROW3_LOWER_40PERCENT_WO_SLASH_,
+        _ROW4_LOWER_40PERCENT_3MODS_3SPC_
+    ),
+
+    [_RAISE] = LAYOUT_all_wrapper(
+        _ROW1_RAISE_40PERCENT_,
+        _ROW2_RAISE_40PERCENT_WO_SCLN_,
+        _ROW3_RAISE_40PERCENT_WO_SLASH_,
+        _ROW4_RAISE_40PERCENT_3MODS_3SPC_
+    ),
+
+    [_ADJUST] = LAYOUT_all_wrapper(
+        _ROW1_ADJUST_40PERCENT_,
+        _ROW2_ADJUST_40PERCENT_WO_SCLN_,
+        _ROW3_ADJUST_40PERCENT_WO_SLASH_,
+        _ROW4_ADJUST_40PERCENT_3MODS_3SPC_
+    ),
+
+    [_MOUSE] = LAYOUT_all_wrapper(
+        _ROW1_MOUSE_40PERCENT_,
+        _ROW2_MOUSE_40PERCENT_WO_SCLN_,
+        _ROW3_MOUSE_40PERCENT_WO_SLASH_,
+        _ROW4_MOUSE_40PERCENT_3MODS_3SPC_
+    )
+};
+
