@@ -63,7 +63,7 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _RAISE_SYMBOLS_R2_ _RAISE_SYMBOLS_R2L_, _RAISE_SYMBOLS_R2R_
 
 #define _2_MODS_LEFT_                        KC_LCTL,  KC_LCMD
-#define _2_MODS_RIGHT_                       KC_RCMD,  KC_ROPT
+#define _2_MODS_RIGHT_                       KC_ROPT,  KC_RCTL
 #define _3_MODS_LEFT_                        KC_LCTL,  KC_LOPT, KC_LCMD
 #define _3_MODS_RIGHT_                       KC_RCMD,  KC_ROPT, KC_RCTL
 #define _4_MODS_LEFT_                        KC_LCTL,  ADJUST,  KC_LOPT, KC_LCMD
