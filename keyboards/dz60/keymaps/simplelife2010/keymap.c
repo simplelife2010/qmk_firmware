@@ -5,34 +5,34 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_60_ansi_wrapper(
-        _ROW1_QWERTY_60PERCENT_,
-        _ROW2_QWERTY_60PERCENT_,
-        _ROW3_QWERTY_60PERCENT_,
-        _ROW4_QWERTY_60PERCENT_,
-        _BTM_QWERTY_3_4_MODS_1SPC_
+        _QWERTY_NUMBERS_14_,
+        _QWERTY_ALPHAS1_14_,
+        _QWERTY_ALPHAS2_13_,
+        _QWERTY_ALPHAS3_12_,
+        _QWERTY_BTM_3_4_MODS_1SPC_
     ),
 
     [_RAISE] = LAYOUT_60_ansi_wrapper(
-        _ROW1_RAISE_60PERCENT_,
-        _ROW2_RAISE_60PERCENT_,
-        _ROW3_RAISE_60PERCENT_,
-        _ROW4_RAISE_60PERCENT_,
-        _BTM_RAISE_3_4_MODS_1SPC_
+        _RAISE_NUMBERS_14_,
+        _RAISE_ALPHAS1_14_,
+        _RAISE_ALPHAS2_13_,
+        _RAISE_ALPHAS3_12_,
+        _RAISE_BTM_3_4_MODS_1SPC_
     ),
 
     [_ADJUST] = LAYOUT_60_ansi_wrapper(
-        _ROW1_ADJUST_60PERCENT_,
-        _ROW2_ADJUST_60PERCENT_,
-        _ROW3_ADJUST_60PERCENT_,
-        _ROW4_ADJUST_60PERCENT_,
-        _BTM_ADJUST_3_4_MODS_1SPC_
+        _ADJUST_NUMBERS_14_,
+        _ADJUST_ALPHAS1_14_,
+        _ADJUST_ALPHAS2_13_,
+        _ADJUST_ALPHAS3_12_,
+        _ADJUST_BTM_3_4_MODS_1SPC_
     ),
 
     [_MOUSE] = LAYOUT_60_ansi_wrapper(
-        _ROW1_MOUSE_60PERCENT_,
-        _ROW2_MOUSE_60PERCENT_,
-        _ROW3_MOUSE_60PERCENT_,
-        _ROW4_MOUSE_60PERCENT_,
-        _BTM_MOUSE_3_4_MODS_1SPC_
+        _MOUSE_NUMBERS_14_,
+        _MOUSE_ALPHAS1_14_,
+        _MOUSE_ALPHAS2_13_,
+        _MOUSE_ALPHAS3_12_,
+        _MOUSE_BTM_3_4_MODS_1SPC_
     )
 };
