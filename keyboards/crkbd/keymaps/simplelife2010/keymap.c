@@ -26,37 +26,37 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_3x6_3_wrapper(
-        _ROW1_QWERTY_40PERCENT_,
-        _ROW2_QWERTY_40PERCENT_,
-        _ROW3_QWERTY_40PERCENT_,
+        _QWERTY_ALPHAS1_12_,
+        _QWERTY_ALPHAS2_12_,
+        _QWERTY_ALPHAS3_12_,
         _QWERTY_BTM_2MODS_2SPC_
   ),
 
   [_LOWER] = LAYOUT_split_3x6_3_wrapper(
-        _ROW1_LOWER_40PERCENT_,
-        _ROW2_LOWER_40PERCENT_,
-        _ROW3_LOWER_40PERCENT_,
+        _LOWER_ALPHAS1_12_,
+        _LOWER_ALPHAS2_12_,
+        _LOWER_ALPHAS3_12_,
         _LOWER_BTM_2MODS_2SPC_
   ),
 
   [_RAISE] = LAYOUT_split_3x6_3_wrapper(
-        _ROW1_RAISE_40PERCENT_,
-        _ROW2_RAISE_40PERCENT_,
-        _ROW3_RAISE_40PERCENT_,
+        _RAISE_ALPHAS1_12_,
+        _RAISE_ALPHAS2_12_,
+        _RAISE_ALPHAS3_12_,
         _RAISE_BTM_2MODS_2SPC_
   ),
 
   [_ADJUST] = LAYOUT_split_3x6_3_wrapper(
-        _ROW1_ADJUST_40PERCENT_,
-        _ROW2_ADJUST_40PERCENT_,
-        _ROW3_ADJUST_40PERCENT_,
+        _ADJUST_ALPHAS1_12_,
+        _ADJUST_ALPHAS2_12_,
+        _ADJUST_ALPHAS3_12_,
         _ADJUST_BTM_2MODS_2SPC_
   ),
  
   [_MOUSE] = LAYOUT_split_3x6_3_wrapper(
-        _ROW1_MOUSE_40PERCENT_,
-        _ROW2_MOUSE_40PERCENT_,
-        _ROW3_MOUSE_40PERCENT_,
+        _MOUSE_ALPHAS1_12_,
+        _MOUSE_ALPHAS2_12_,
+        _MOUSE_ALPHAS3_12_,
         _MOUSE_BTM_2MODS_2SPC_
   ),
 };

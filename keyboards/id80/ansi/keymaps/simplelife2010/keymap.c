@@ -5,7 +5,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_wrapper(
-        _ROW1_QWERTY_80PERCENT_2_,
+        _QWERTY_FKEYS_15_,
         _QWERTY_NUMBERS_15_,
         _QWERTY_ALPHAS1_15_,
         _QWERTY_ALPHAS2_13_,
@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_MOUSE] = LAYOUT_wrapper(
-        _ROW1_MOUSE_80PERCENT_2_,
+        _MOUSE_FKEYS_15_,
         _MOUSE_NUMBERS_15_,
         _MOUSE_ALPHAS1_15_,
         _MOUSE_ALPHAS2_13_,
