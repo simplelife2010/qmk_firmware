@@ -36,7 +36,7 @@ void tahym_finished(qk_tap_dance_state_t *state, void *user_data) {
     xxhym_tap_state.state = cur_dance(state);
     switch (xxhym_tap_state.state) {
         case TD_SINGLE_TAP:
-            tap_code(KC_ESC);
+            tap_code(KC_TAB);
             break;
         case TD_SINGLE_HOLD:
             register_mods(HYPER_MODS);
@@ -65,7 +65,7 @@ void xxhym_reset(qk_tap_dance_state_t *state, void *user_data) {
 
 // Associate our tap dance key with its functionality
 qk_tap_dance_action_t tap_dance_actions[] = {
-    [TD_ES_HY_M] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, eshym_finished, xxhym_reset)
+    [TD_ES_HY_M] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, eshym_finished, xxhym_reset),
     [TD_TA_HY_M] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tahym_finished, xxhym_reset)
 };
 
