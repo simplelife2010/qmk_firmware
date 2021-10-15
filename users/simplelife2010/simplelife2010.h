@@ -111,7 +111,7 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _QWERTY_BTM_3_4_MODS_1SPC_         _3_MODS_LEFT_, RSE_SPC,                              _4_MODS_RIGHT_
 #define _QWERTY_BTM_3_2_MODS_1SPC_3CUR_    _3_MODS_LEFT_, KC_SPC,                               _2_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
 
-#define _LOWER_ALPHAS1_12_                 _______,    _SHIFTED_NUMBERS_,               _______
+#define _LOWER_ALPHAS1_12_                 KC_TILD,    _SHIFTED_NUMBERS_,               _______
 #define _LOWER_ALPHAS1_13_ESC_SPLIT_BSPC_  _______,    _SHIFTED_NUMBERS_,               _______, _______
 #define _LOWER_ALPHAS2_11_WO_SCLN_         _______,    _LOWER_SYMBOLS_R2L_, _4_BLANKS_, KC_PIPE
 #define _LOWER_ALPHAS2_12_                 _______,    _LOWER_SYMBOLS_R2_,              KC_PIPE
@@ -124,7 +124,7 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _LOWER_BTM_2MODS_2SPC_             _2_BLANKS_,    _DOUBLE_SPACEBAR_ADJUST_RIGHT_,       _2_BLANKS_
 
 #define _RAISE_NUMBERS_14_                 _______, _10_BLANKS_, _3_BLANKS_
-#define _RAISE_ALPHAS1_12_                 _______,    _NUMBERS_,                           _______
+#define _RAISE_ALPHAS1_12_                 KC_GRV,     _NUMBERS_,                           _______
 #define _RAISE_ALPHAS1_13_ESC_SPLIT_BSPC_  _______,    _NUMBERS_,                           _______, _______
 #define _RAISE_ALPHAS1_14_                 _______, _10_BLANKS_, _3_BLANKS_
 #define _RAISE_ALPHAS2_11_WO_SCLN_         _______,    _RAISE_SYMBOLS_R2L_, _VIM_NAV_KEYS_, KC_BSLS
