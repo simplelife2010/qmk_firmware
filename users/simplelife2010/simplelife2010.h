@@ -106,12 +106,12 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _QWERTY_NUMBERS_14_                KC_GRV,  _NUMBERS_, KC_MINS, KC_EQL,  KC_BSPC
 #define _QWERTY_NUMBERS_15_                _QWERTY_NUMBERS_14_, KC_HOME
 #define _QWERTY_ALPHAS1_12_                KC_TAB,          _QWERTY1_,                               KC_BSPC
-#define _QWERTY_ALPHAS1_13_ESC_SPLIT_BSPC_ KC_ESC,          _QWERTY1_,                               KC_DEL, KC_BSPC
+#define _QWERTY_ALPHAS1_13_ESC_SPLIT_BSPC_ ES_HY_M,         _QWERTY1_,                               KC_DEL, KC_BSPC
 #define _QWERTY_ALPHAS1_14_                KC_TAB,  _QWERTY1_, KC_LBRC, KC_RBRC, KC_BSLS
 #define _QWERTY_ALPHAS1_15_                _QWERTY_ALPHAS1_14_, KC_END
 #define _QWERTY_ALPHAS2_11_WO_SCLN_        ES_HY_M,         _QWERTY2_
 #define _QWERTY_ALPHAS2_12_                ES_HY_M,         _QWERTY2_,                               KC_ENT
-#define _QWERTY_ALPHAS2_12_TAB_            TA_HY_M,         _QWERTY2_,                               KC_ENT
+#define _QWERTY_ALPHAS2_12_TAB_            KC_TAB,          _QWERTY2_,                               KC_ENT
 #define _QWERTY_ALPHAS2_13_                ES_HY_M, _QWERTY2_, KC_QUOT, KC_ENT
 #define _QWERTY_ALPHAS2_14_                _QWERTY_ALPHAS2_13_, KC_PGUP
 #define _QWERTY_ALPHAS3_12_                KC_LSFT,         _QWERTY3_,                               KC_RSFT
@@ -128,12 +128,12 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _QWERTY_BTM_3_2_MODS_1SPC_3CUR_    _3_MODS_LEFT_, KC_SPC,                               _2_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
 
 #define _LOWER_ALPHAS1_12_                 KC_TILD,    _SHIFTED_NUMBERS_,               _______
-#define _LOWER_ALPHAS1_13_ESC_SPLIT_BSPC_  _______,    _SHIFTED_NUMBERS_,               _______, _______
+#define _LOWER_ALPHAS1_13_ESC_SPLIT_BSPC_  KC_TILD,    _SHIFTED_NUMBERS_,               _______, _______
 #define _LOWER_ALPHAS2_11_WO_SCLN_         _______,    _LOWER_SYMBOLS_R2L_, _4_BLANKS_, KC_PIPE
 #define _LOWER_ALPHAS2_12_                 _______,    _LOWER_SYMBOLS_R2_,              KC_PIPE
 #define _LOWER_ALPHAS3_12_                 _12_BLANKS_
 #define _LOWER_ALPHAS3_12_WO_SLASH_        _12_BLANKS_
-#define _LOWER_ALPHAS3_13_DOUBLE_B_        _12_BLANKS_
+#define _LOWER_ALPHAS3_13_DOUBLE_B_        _12_BLANKS_, _______
 #define _LOWER_BTM_4MODS_2SPC_             _4_BLANKS_,    _DOUBLE_SPACEBAR_ADJUST_RIGHT_,       _4_BLANKS_
 #define _LOWER_BTM_3MODS_2SPC_             _3_BLANKS_,    _DOUBLE_SPACEBAR_ADJUST_RIGHT_,       _3_BLANKS_
 #define _LOWER_BTM_3MODS_3SPC_             _3_BLANKS_,    _TRIPLE_SPACEBAR_ADJUST_RIGHT_,       _3_BLANKS_
@@ -141,7 +141,7 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 
 #define _RAISE_NUMBERS_14_                 _______, _10_BLANKS_, _3_BLANKS_
 #define _RAISE_ALPHAS1_12_                 KC_GRV,     _NUMBERS_,                           _______
-#define _RAISE_ALPHAS1_13_ESC_SPLIT_BSPC_  _______,    _NUMBERS_,                           _______, _______
+#define _RAISE_ALPHAS1_13_ESC_SPLIT_BSPC_  KC_GRV,    _NUMBERS_,                           _______, _______
 #define _RAISE_ALPHAS1_14_                 _______, _10_BLANKS_, _3_BLANKS_
 #define _RAISE_ALPHAS2_11_WO_SCLN_         _______,    _RAISE_SYMBOLS_R2L_, _VIM_NAV_KEYS_, KC_BSLS
 #define _RAISE_ALPHAS2_12_                 _______,    _RAISE_SYMBOLS_R2_,                  KC_BSLS
@@ -158,7 +158,7 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _ADJUST_NUMBERS_14_                _______, _F_KEYS_1_TO_10_, KC_F11, KC_F12, KC_F13
 #define _ADJUST_NUMBERS_15_                _ADJUST_NUMBERS_14_, _______
 #define _ADJUST_ALPHAS1_12_                RESET,      _F_KEYS_1_TO_10_, KC_F11
-#define _ADJUST_ALPHAS1_13_ESC_SPLIT_BSPC_ _______,    _F_KEYS_1_TO_10_, KC_F11, KC_F12
+#define _ADJUST_ALPHAS1_13_ESC_SPLIT_BSPC_ RESET,    _F_KEYS_1_TO_10_, KC_F11, KC_F12
 #define _ADJUST_ALPHAS1_14_                _______, _10_BLANKS_, _3_BLANKS_
 #define _ADJUST_ALPHAS1_15_                _ADJUST_ALPHAS1_14_, _______
 #define _ADJUST_ALPHAS2_11_WO_SCLN_        _______,    _5_BLANKS_, _4_BLANKS_, KC_ENTER
