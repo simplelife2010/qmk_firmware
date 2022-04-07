@@ -37,6 +37,7 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define HYPER_MODS (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT) | MOD_BIT(KC_LOPT) | MOD_BIT(KC_LGUI))
 #define LOWER MO(_LOWER)
 #define RSE_SPC LT(_RAISE, KC_SPC)
+#define ADJ_SPC LT(_ADJUST, KC_SPC)
 #define ADJUST MO(_ADJUST)
 #define ES_HY_M TD(TD_ES_HY_M)
 #define TA_HY_M TD(TD_TA_HY_M)
@@ -124,8 +125,8 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _QWERTY_BTM_3MODS_2SPC_            _3_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_,        _3_MODS_RIGHT_
 #define _QWERTY_BTM_3MODS_3SPC_            _3_MODS_LEFT_, _TRIPLE_SPACEBAR_LWR_ADJ_RSE_, _3_MODS_RIGHT_
 #define _QWERTY_BTM_2MODS_2SPC_            _2_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_,        _2_MODS_RIGHT_
-#define _QWERTY_BTM_3_4_MODS_1SPC_         _3_MODS_LEFT_, RSE_SPC,                              _4_MODS_RIGHT_
-#define _QWERTY_BTM_3_2_MODS_1SPC_3CUR_    _3_MODS_LEFT_, KC_SPC,                               _2_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
+#define _QWERTY_BTM_3_4_MODS_1SPC_         _3_MODS_LEFT_, ADJ_SPC,                              _4_MODS_RIGHT_
+#define _QWERTY_BTM_3_2_MODS_1SPC_3CUR_    _3_MODS_LEFT_, ADJ_SPC,                               _2_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
 
 #define _LOWER_ALPHAS1_12_                 KC_TILD,    _SHIFTED_NUMBERS_,               _______
 #define _LOWER_ALPHAS1_13_ESC_SPLIT_BSPC_  KC_TILD,    _SHIFTED_NUMBERS_,               _______, _______
@@ -161,9 +162,9 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _ADJUST_ALPHAS1_13_ESC_SPLIT_BSPC_ RESET,    _F_KEYS_1_TO_10_, KC_F11, KC_F12
 #define _ADJUST_ALPHAS1_14_                _______, _10_BLANKS_, _3_BLANKS_
 #define _ADJUST_ALPHAS1_15_                _ADJUST_ALPHAS1_14_, _______
-#define _ADJUST_ALPHAS2_11_WO_SCLN_        _______,    _5_BLANKS_, _4_BLANKS_, KC_ENTER
-#define _ADJUST_ALPHAS2_12_                _______,    _10_BLANKS_,      _______
-#define _ADJUST_ALPHAS2_13_                _______, _5_BLANKS_,  _4_BLANKS_, _3_BLANKS_
+#define _ADJUST_ALPHAS2_11_WO_SCLN_        _______,    _5_BLANKS_, _VIM_NAV_KEYS_, KC_ENTER
+#define _ADJUST_ALPHAS2_12_                _______,    _5_BLANKS_, _VIM_NAV_KEYS, _2_BLANKS_
+#define _ADJUST_ALPHAS2_13_                _______, _5_BLANKS_, _VIM_NAV_KEYS_, _3_BLANKS_
 #define _ADJUST_ALPHAS2_14_                _ADJUST_ALPHAS2_13_, _______
 #define _ADJUST_ALPHAS3_12_                _______,    _10_BLANKS_,      _______
 #define _ADJUST_ALPHAS3_12_WO_SLASH_       _______,    _10_BLANKS_,      _______
