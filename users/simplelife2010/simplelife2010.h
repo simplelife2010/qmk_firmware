@@ -156,7 +156,7 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _RAISE_BTM_2MODS_2SPC_             _2_BLANKS_,    _DOUBLE_SPACEBAR_ADJUST_LEFT_,        _2_BLANKS_
 #define _RAISE_BTM_3_4_MODS_1SPC_          _3_BLANKS_,    _______,                              _4_BLANKS_
 
-#define _ADJUST_NUMBERS_14_                _______, _F_KEYS_1_TO_10_, KC_F11, KC_F12, KC_F13
+#define _ADJUST_NUMBERS_14_                RESET, _F_KEYS_1_TO_10_, KC_F11, KC_F12, KC_F13
 #define _ADJUST_NUMBERS_15_                _ADJUST_NUMBERS_14_, _______
 #define _ADJUST_ALPHAS1_12_                RESET,      _F_KEYS_1_TO_10_, KC_F11
 #define _ADJUST_ALPHAS1_13_ESC_SPLIT_BSPC_ RESET,    _F_KEYS_1_TO_10_, KC_F11, KC_F12
