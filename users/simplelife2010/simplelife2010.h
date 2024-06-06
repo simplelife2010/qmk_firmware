@@ -6,41 +6,13 @@ enum userspace_layers {
   _QWERTY = 0,
   _LOWER,
   _RAISE,
-  _ADJUST,
-  _MOUSE
+  _ADJUST
 };
 
-// Tap dances
-enum {
-    TD_ES_HY_M, // Single tap: Escape, single hold: Hyper, double hold: Mouse layer
-    TD_TA_HY_M // Single tap: Tab, single hold: Hyper, double hold: Mouse layer
-};
-
-typedef enum {
-    TD_NONE,
-    TD_UNKNOWN,
-    TD_SINGLE_TAP,
-    TD_SINGLE_HOLD,
-    TD_DOUBLE_HOLD
-} td_state_t;
-
-typedef struct {
-    bool is_press_action;
-    td_state_t state;
-} td_tap_t;
-
-td_state_t cur_dance(qk_tap_dance_state_t *state);
-
-void eshym_finished(qk_tap_dance_state_t *state, void *user_data);
-void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
-
-#define HYPER_MODS (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LSFT) | MOD_BIT(KC_LOPT) | MOD_BIT(KC_LGUI))
 #define LOWER MO(_LOWER)
 #define RSE_SPC LT(_RAISE, KC_SPC)
 #define ADJ_SPC LT(_ADJUST, KC_SPC)
 #define ADJUST MO(_ADJUST)
-#define ES_HY_M TD(TD_ES_HY_M)
-#define TA_HY_M TD(TD_TA_HY_M)
 
 #ifdef HOME_ROW_MODS
     #define CTL_A LCTL_T(KC_A)
@@ -54,7 +26,6 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #endif
 
 #define _VIM_NAV_KEYS_                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
-#define _MOUSE_NAV_KEYS_                   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
 #define _2_BLANKS_                         _______, _______
 #define _3_BLANKS_                         _______, _______, _______
 #define _4_BLANKS_                         _______, _______, _______, _______
@@ -111,15 +82,15 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _QWERTY_NUMBERS_15_                _QWERTY_NUMBERS_14_, KC_HOME
 #define _QWERTY_NUMBERS_17_IRON180_        _QWERTY_NUMBERS_14_, KC_BSPC, KC_INS, KC_HOME, KC_PGUP
 #define _QWERTY_ALPHAS1_12_                KC_TAB,          _QWERTY1_,                               KC_BSPC
-#define _QWERTY_ALPHAS1_13_ESC_SPLIT_BSPC_ ES_HY_M,         _QWERTY1_,                               KC_DEL, KC_BSPC
+#define _QWERTY_ALPHAS1_13_ESC_SPLIT_BSPC_ KC_ESC,          _QWERTY1_,                               KC_DEL, KC_BSPC
 #define _QWERTY_ALPHAS1_14_                KC_TAB,  _QWERTY1_, KC_LBRC, KC_RBRC, KC_BSLS
 #define _QWERTY_ALPHAS1_15_                _QWERTY_ALPHAS1_14_, KC_END
 #define _QWERTY_ALPHAS1_17_                _QWERTY_ALPHAS1_14_, KC_DEL, KC_END, KC_PGDN
-#define _QWERTY_ALPHAS2_11_WO_SCLN_        ES_HY_M,         _QWERTY2_
-#define _QWERTY_ALPHAS2_12_                ES_HY_M,         _QWERTY2_,                               KC_ENT
+#define _QWERTY_ALPHAS2_11_WO_SCLN_        KC_ESC,          _QWERTY2_
+#define _QWERTY_ALPHAS2_12_                KC_ESC,          _QWERTY2_,                               KC_ENT
 #define _QWERTY_ALPHAS2_12_TAB_            KC_TAB,          _QWERTY2_,                               KC_ENT
-#define _QWERTY_ALPHAS2_13_                ES_HY_M, _QWERTY2_, KC_QUOT, KC_ENT
-#define _QWERTY_ALPHAS2_13_IRON180_        ES_HY_M, _QWERTY2_, KC_QUOT, KC_NO, KC_ENT
+#define _QWERTY_ALPHAS2_13_                KC_ESC,  _QWERTY2_, KC_QUOT, KC_ENT
+#define _QWERTY_ALPHAS2_13_IRON180_        KC_ESC,  _QWERTY2_, KC_QUOT, KC_NO, KC_ENT
 #define _QWERTY_ALPHAS2_14_                _QWERTY_ALPHAS2_13_, KC_PGUP
 #define _QWERTY_ALPHAS3_12_                KC_LSFT,         _QWERTY3_,                               KC_RSFT
 #define _QWERTY_ALPHAS3_12_WO_SLASH_       KC_LSFT, ADJUST, _QWERTY3L_, KC_N, KC_M, KC_COMM, KC_DOT, KC_RSFT
@@ -170,13 +141,13 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _ADJUST_NUMBERS_17_IRON180_        _ADJUST_NUMBERS_14_, KC_F13, KC_INS, KC_HOME, KC_PGUP
 #define _ADJUST_ALPHAS1_12_                RESET,      _F_KEYS_1_TO_10_, KC_F11
 #define _ADJUST_ALPHAS1_13_ESC_SPLIT_BSPC_ RESET,    _F_KEYS_1_TO_10_, KC_F11, KC_F12
-#define _ADJUST_ALPHAS1_14_                _______, _10_BLANKS_, _3_BLANKS_
+#define _ADJUST_ALPHAS1_14_                _2_BLANKS_, KC_UP, _______, _10_BLANKS_
 #define _ADJUST_ALPHAS1_15_                _ADJUST_ALPHAS1_14_, _______
 #define _ADJUST_ALPHAS1_17_                _ADJUST_ALPHAS1_14_, _3_BLANKS_
 #define _ADJUST_ALPHAS2_11_WO_SCLN_        _______,    _5_BLANKS_, _VIM_NAV_KEYS_, KC_ENTER
 #define _ADJUST_ALPHAS2_12_                _______,    _5_BLANKS_, _VIM_NAV_KEYS, _2_BLANKS_
-#define _ADJUST_ALPHAS2_13_                _______, _5_BLANKS_, _VIM_NAV_KEYS_, _3_BLANKS_
-#define _ADJUST_ALPHAS2_13_IRON180_        _______, _5_BLANKS_, _VIM_NAV_KEYS_, _4_BLANKS_
+#define _ADJUST_ALPHAS2_13_                _______, KC_LEFT, KC_DOWN, KC_RGHT, _2_BLANKS_, _VIM_NAV_KEYS_, _3_BLANKS_
+#define _ADJUST_ALPHAS2_13_IRON180_        _______, KC_LEFT, KC_DOWN, KC_RGHT, _2_BLANKS_, _VIM_NAV_KEYS_, _4_BLANKS_
 #define _ADJUST_ALPHAS2_14_                _ADJUST_ALPHAS2_13_, _______
 #define _ADJUST_ALPHAS3_12_                _______,    _10_BLANKS_,      _______
 #define _ADJUST_ALPHAS3_12_WO_SLASH_       _______,    _10_BLANKS_,      _______
@@ -190,26 +161,3 @@ void eshym_reset(qk_tap_dance_state_t *state, void *user_data);
 #define _ADJUST_BTM_3_4_MODS_1SPC_         _3_BLANKS_,    _______,                              _4_BLANKS_
 #define _ADJUST_BTM_3_2_MODS_1SPC_3CUR_    _3_BLANKS_,    _______,                              _2_BLANKS_, _3_BLANKS_
 #define _ADJUST_BTM_3_4_MODS_1SPC_3CUR_    _10_BLANKS_,    _______
-
-#define _MOUSE_FKEYS_15_                   RESET, _12_BLANKS_, _2_BLANKS_
-#define _MOUSE_NUMBERS_14_                 RESET,   _10_BLANKS_, _3_BLANKS_
-#define _MOUSE_NUMBERS_15_                 _MOUSE_NUMBERS_14_, _______
-#define _MOUSE_ALPHAS1_12_                 RESET,       _10_BLANKS_, _______
-#define _MOUSE_ALPHAS1_13_ESC_SPLIT_BSPC_  RESET,       _10_BLANKS_, _______, _______
-#define _MOUSE_ALPHAS1_14_                 _______, _10_BLANKS_, _3_BLANKS_
-#define _MOUSE_ALPHAS1_15_                 _MOUSE_ALPHAS1_14_, _______
-#define _MOUSE_ALPHAS2_11_WO_SCLN_         _______,     _5_BLANKS_, _MOUSE_NAV_KEYS_, KC_BTN2
-#define _MOUSE_ALPHAS2_12_                 _______,     _5_BLANKS_, _MOUSE_NAV_KEYS_, _______, KC_BTN2
-#define _MOUSE_ALPHAS2_13_                 _______, _5_BLANKS_,  _MOUSE_NAV_KEYS_, _2_BLANKS_, KC_BTN2
-#define _MOUSE_ALPHAS2_14_                 _MOUSE_ALPHAS2_13_, _______
-#define _MOUSE_ALPHAS3_12_                 _______,     _10_BLANKS_, _______
-#define _MOUSE_ALPHAS3_12_WO_SLASH_        _______,     _10_BLANKS_, _______
-#define _MOUSE_ALPHAS3_13_                 _MOUSE_ALPHAS3_12_, KC_MS_UP
-#define _MOUSE_ALPHAS3_13_DOUBLE_B_        _______,     _5_BLANKS_, _______, _5_BLANKS_, _______
-#define _MOUSE_ALPHAS3_14_                 _MOUSE_ALPHAS3_12_, KC_MS_U, _______
-#define _MOUSE_BTM_4MODS_2SPC_             _4_BLANKS_,    _DOUBLE_SPACEBAR_BTN1_RIGHT_,         _4_BLANKS_
-#define _MOUSE_BTM_3MODS_2SPC_             _3_BLANKS_,    _DOUBLE_SPACEBAR_BTN1_RIGHT_,         _3_BLANKS_
-#define _MOUSE_BTM_3MODS_3SPC_             _3_BLANKS_,    _TRIPLE_SPACEBAR_BTN1_RIGHT_,         _3_BLANKS_
-#define _MOUSE_BTM_2MODS_2SPC_             _2_BLANKS_,    _DOUBLE_SPACEBAR_BTN1_RIGHT_,         _2_BLANKS_
-#define _MOUSE_BTM_3_4_MODS_1SPC_          _3_BLANKS_,    KC_BTN1,                              _4_BLANKS_
-#define _MOUSE_BTM_3_2_MODS_1SPC_3CUR_     _3_BLANKS_, KC_BTN1, _2_BLANKS_, KC_MS_L, KC_MS_D, KC_MS_R

@@ -36,15 +36,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	_ADJUST_ALPHAS2_14_,
 	_ADJUST_ALPHAS3_14_,
 	_ADJUST_BTM_3_2_MODS_1SPC_3CUR_
-    ),
-
-    [_MOUSE] = LAYOUT_bsp2u_wrapper(
-        _______,
-        _MOUSE_NUMBERS_15_,
-        _MOUSE_ALPHAS1_15_,
-	_MOUSE_ALPHAS2_14_,
-	_MOUSE_ALPHAS3_14_,
-	_MOUSE_BTM_3_2_MODS_1SPC_3CUR_
     )
 };
 
