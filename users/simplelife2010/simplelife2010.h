@@ -103,9 +103,9 @@ enum userspace_layers {
 #define _QWERTY_BTM_3MODS_2SPC_            _3_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_,        _3_MODS_RIGHT_
 #define _QWERTY_BTM_3MODS_3SPC_            _3_MODS_LEFT_, _TRIPLE_SPACEBAR_LWR_ADJ_RSE_, _3_MODS_RIGHT_
 #define _QWERTY_BTM_2MODS_2SPC_            _2_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_,        _2_MODS_RIGHT_
-#define _QWERTY_BTM_3_4_MODS_1SPC_         _3_MODS_LEFT_, ADJ_SPC,                              _4_MODS_RIGHT_
-#define _QWERTY_BTM_3_4_MODS_1SPC_3CUR_    _3_MODS_LEFT_, ADJ_SPC,                              _4_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
-#define _QWERTY_BTM_3_2_MODS_1SPC_3CUR_    _3_MODS_LEFT_, ADJ_SPC,                               _2_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
+#define _QWERTY_BTM_3_4_MODS_1SPC_         _3_MODS_LEFT_, KC_SPC, _4_MODS_RIGHT_
+#define _QWERTY_BTM_3_4_MODS_1SPC_3CUR_    _3_MODS_LEFT_, ADJ_SPC, _4_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
+#define _QWERTY_BTM_3_2_MODS_1SPC_3CUR_    _3_MODS_LEFT_, ADJ_SPC, _2_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
 
 #define _LOWER_ALPHAS1_12_                 KC_TILD,    _SHIFTED_NUMBERS_,               _______
 #define _LOWER_ALPHAS1_13_ESC_SPLIT_BSPC_  KC_TILD,    _SHIFTED_NUMBERS_,               _______, _______
