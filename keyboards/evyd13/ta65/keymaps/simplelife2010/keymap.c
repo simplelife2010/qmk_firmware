@@ -1,0 +1,22 @@
+#include QMK_KEYBOARD_H
+#include "simplelife2010.h"
+
+#define LAYOUT_all_wrapper(...) LAYOUT_all(__VA_ARGS__)
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [_QWERTY] = LAYOUT_all_wrapper(
+        _QWERTY_NUMBERS_15_TA65_NOBSLS_,
+        _QWERTY_ALPHAS1_15_,
+	_QWERTY_ALPHAS2_14_TA65_NOBSLS_,
+	_QWERTY_ALPHAS3_14_TA65_NOBSLS_,
+	_QWERTY_BTM_TA65_NOFN_
+    ),
+
+    [_ADJUST] = LAYOUT_all_wrapper(
+        _ADJUST_NUMBERS_15_TA65_,
+        _ADJUST_ALPHAS1_15_,
+	_ADJUST_ALPHAS2_14_TA65_,
+	_ADJUST_ALPHAS3_14_TA65_,
+	_ADJUST_BTM_TA65_NOFN_
+    )
+};

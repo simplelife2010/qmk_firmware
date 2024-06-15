@@ -80,6 +80,7 @@ enum userspace_layers {
 #define _QWERTY_FKEYS_17_                  KC_ESC, _F_KEYS_1_TO_13_, KC_PSCR, KC_SLCK, KC_PAUS
 #define _QWERTY_NUMBERS_14_                KC_GRV,  _NUMBERS_, KC_MINS, KC_EQL,  KC_BSPC
 #define _QWERTY_NUMBERS_15_                _QWERTY_NUMBERS_14_, KC_HOME
+#define _QWERTY_NUMBERS_15_TA65_NOBSLS_    _QWERTY_NUMBERS_14_, KC_BSPC, KC_HOME
 #define _QWERTY_NUMBERS_17_IRON180_        _QWERTY_NUMBERS_14_, KC_BSPC, KC_INS, KC_HOME, KC_PGUP
 #define _QWERTY_ALPHAS1_12_                KC_TAB,          _QWERTY1_,                               KC_BSPC
 #define _QWERTY_ALPHAS1_13_ESC_SPLIT_BSPC_ KC_ESC,          _QWERTY1_,                               KC_DEL, KC_BSPC
@@ -92,6 +93,7 @@ enum userspace_layers {
 #define _QWERTY_ALPHAS2_13_                KC_ESC,  _QWERTY2_, KC_QUOT, KC_ENT
 #define _QWERTY_ALPHAS2_13_IRON180_        KC_ESC,  _QWERTY2_, KC_QUOT, KC_NO, KC_ENT
 #define _QWERTY_ALPHAS2_14_                _QWERTY_ALPHAS2_13_, KC_PGUP
+#define _QWERTY_ALPHAS2_14_TA65_NOBSLS_    _QWERTY_ALPHAS2_13_, KC_ENT, KC_PGUP
 #define _QWERTY_ALPHAS3_12_                KC_LSFT,         _QWERTY3_,                               KC_RSFT
 #define _QWERTY_ALPHAS3_12_WO_SLASH_       KC_LSFT, ADJUST, _QWERTY3L_, KC_N, KC_M, KC_COMM, KC_DOT, KC_RSFT
 #define _QWERTY_ALPHAS3_13_DOUBLE_B_       KC_LSFT,         _QWERTY3L_, ADJUST, _QWERTY3R_,          KC_RSFT
@@ -99,6 +101,7 @@ enum userspace_layers {
 #define _QWERTY_ALPHAS3_13_                _QWERTY_ALPHAS3_12_, KC_UP
 #define _QWERTY_ALPHAS3_13_IRON180_        KC_LSFT, KC_NO, _QWERTY3_, KC_RSFT, KC_NO, KC_UP
 #define _QWERTY_ALPHAS3_14_                _QWERTY_ALPHAS3_12_, KC_UP, KC_PGDN
+#define _QWERTY_ALPHAS3_14_TA65_NOBSLS_    KC_LSFT, _QWERTY_ALPHAS3_12_, KC_UP, KC_PGDN
 #define _QWERTY_BTM_4MODS_2SPC_            _4_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_,        _4_MODS_RIGHT_
 #define _QWERTY_BTM_3MODS_2SPC_            _3_MODS_LEFT_, _DOUBLE_SPACEBAR_LOWER_RAISE_,        _3_MODS_RIGHT_
 #define _QWERTY_BTM_3MODS_3SPC_            _3_MODS_LEFT_, _TRIPLE_SPACEBAR_LWR_ADJ_RSE_, _3_MODS_RIGHT_
@@ -106,6 +109,7 @@ enum userspace_layers {
 #define _QWERTY_BTM_3_4_MODS_1SPC_         _3_MODS_LEFT_, KC_SPC, _4_MODS_RIGHT_
 #define _QWERTY_BTM_3_4_MODS_1SPC_3CUR_    _3_MODS_LEFT_, ADJ_SPC, _4_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
 #define _QWERTY_BTM_3_2_MODS_1SPC_3CUR_    _3_MODS_LEFT_, ADJ_SPC, _2_MODS_RIGHT_, KC_LEFT, KC_DOWN, KC_RGHT
+#define _QWERTY_BTM_TA65_NOFN_             _3_MODS_LEFT_, ADJ_SPC, _2_MODS_RIGHT_, _______, KC_LEFT, KC_DOWN, KC_RGHT
 
 #define _LOWER_ALPHAS1_12_                 KC_TILD,    _SHIFTED_NUMBERS_,               _______
 #define _LOWER_ALPHAS1_13_ESC_SPLIT_BSPC_  KC_TILD,    _SHIFTED_NUMBERS_,               _______, _______
@@ -137,7 +141,7 @@ enum userspace_layers {
 
 #define _ADJUST_FKEYS_17_                  RESET, _F_KEYS_1_TO_13_, KC_PSCR, KC_SLCK, KC_PAUS
 #define _ADJUST_NUMBERS_14_                RESET, _F_KEYS_1_TO_10_, KC_F11, KC_F12, KC_F13
-#define _ADJUST_NUMBERS_15_                _ADJUST_NUMBERS_14_, _______
+#define _ADJUST_NUMBERS_15_TA65_           _ADJUST_NUMBERS_14_, _2_BLANKS_
 #define _ADJUST_NUMBERS_17_IRON180_        _ADJUST_NUMBERS_14_, KC_F13, KC_INS, KC_HOME, KC_PGUP
 #define _ADJUST_ALPHAS1_12_                RESET,      _F_KEYS_1_TO_10_, KC_F11
 #define _ADJUST_ALPHAS1_13_ESC_SPLIT_BSPC_ RESET,    _F_KEYS_1_TO_10_, KC_F11, KC_F12
@@ -149,11 +153,13 @@ enum userspace_layers {
 #define _ADJUST_ALPHAS2_13_                _______, KC_LEFT, KC_DOWN, KC_RGHT, _2_BLANKS_, _VIM_NAV_KEYS_, _3_BLANKS_
 #define _ADJUST_ALPHAS2_13_IRON180_        _______, KC_LEFT, KC_DOWN, KC_RGHT, _2_BLANKS_, _VIM_NAV_KEYS_, _4_BLANKS_
 #define _ADJUST_ALPHAS2_14_                _ADJUST_ALPHAS2_13_, _______
+#define _ADJUST_ALPHAS2_14_TA65_           _ADJUST_ALPHAS2_13_, _2_BLANKS_
 #define _ADJUST_ALPHAS3_12_                _______,    _10_BLANKS_,      _______
 #define _ADJUST_ALPHAS3_12_WO_SLASH_       _______,    _10_BLANKS_,      _______
 #define _ADJUST_ALPHAS3_13_IRON180_        _15_BLANKS_
 #define _ADJUST_ALPHAS3_13_DOUBLE_B_       _______,    _5_BLANKS_, _______, _5_BLANKS_, _______
 #define _ADJUST_ALPHAS3_14_                _ADJUST_ALPHAS3_12_, _2_BLANKS_
+#define _ADJUST_ALPHAS3_14_TA65_           _______, _ADJUST_ALPHAS3_12_, _2_BLANKS_
 #define _ADJUST_BTM_4MODS_2SPC_            _4_BLANKS_,    _______, _______,                     _4_BLANKS_
 #define _ADJUST_BTM_3MODS_2SPC_            _3_BLANKS_,    _______, _______,                     _3_BLANKS_
 #define _ADJUST_BTM_3MODS_3SPC_            _3_BLANKS_,    _3_BLANKS_,                           _3_BLANKS_
@@ -161,3 +167,4 @@ enum userspace_layers {
 #define _ADJUST_BTM_3_4_MODS_1SPC_         _3_BLANKS_,    _______,                              _4_BLANKS_
 #define _ADJUST_BTM_3_2_MODS_1SPC_3CUR_    _3_BLANKS_,    _______,                              _2_BLANKS_, _3_BLANKS_
 #define _ADJUST_BTM_3_4_MODS_1SPC_3CUR_    _10_BLANKS_,    _______
+#define _ADJUST_BTM_TA65_NOFN_             _10_BLANKS_
