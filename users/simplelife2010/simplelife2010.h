@@ -79,6 +79,7 @@ enum userspace_layers {
 #define _QWERTY_FKEYS_15_                  KC_ESC, _F_KEYS_1_TO_12_, KC_INS, KC_DEL
 #define _QWERTY_FKEYS_17_                  KC_ESC, _F_KEYS_1_TO_13_, KC_PSCR, KC_SLCK, KC_PAUS
 #define _QWERTY_NUMBERS_14_                KC_GRV,  _NUMBERS_, KC_MINS, KC_EQL,  KC_BSPC
+#define _QWERTY_NUMBERS_14_SAMUEL_         KC_ESC,  _NUMBERS_, KC_MINS, KC_EQL,  KC_BSPC
 #define _QWERTY_NUMBERS_15_                _QWERTY_NUMBERS_14_, KC_HOME
 #define _QWERTY_NUMBERS_15_TA65_NOBSLS_    _QWERTY_NUMBERS_14_, KC_BSPC, KC_HOME
 #define _QWERTY_NUMBERS_17_IRON180_        _QWERTY_NUMBERS_14_, KC_BSPC, KC_INS, KC_HOME, KC_PGUP
@@ -91,6 +92,7 @@ enum userspace_layers {
 #define _QWERTY_ALPHAS2_12_                KC_ESC,          _QWERTY2_,                               KC_ENT
 #define _QWERTY_ALPHAS2_12_TAB_            KC_TAB,          _QWERTY2_,                               KC_ENT
 #define _QWERTY_ALPHAS2_13_                KC_ESC,  _QWERTY2_, KC_QUOT, KC_ENT
+#define _QWERTY_ALPHAS2_13_SAMUEL_         KC_CAPS, _QWERTY2_, KC_QUOT, KC_ENT
 #define _QWERTY_ALPHAS2_13_IRON180_        KC_ESC,  _QWERTY2_, KC_QUOT, KC_NO, KC_ENT
 #define _QWERTY_ALPHAS2_14_                _QWERTY_ALPHAS2_13_, KC_PGUP
 #define _QWERTY_ALPHAS2_14_TA65_NOBSLS_    _QWERTY_ALPHAS2_13_, KC_ENT, KC_PGUP
@@ -139,8 +141,9 @@ enum userspace_layers {
 #define _RAISE_BTM_2MODS_2SPC_             _2_BLANKS_,    _DOUBLE_SPACEBAR_ADJUST_LEFT_,        _2_BLANKS_
 #define _RAISE_BTM_3_4_MODS_1SPC_          _3_BLANKS_,    _______,                              _4_BLANKS_
 
-#define _ADJUST_FKEYS_17_                  RESET, _F_KEYS_1_TO_13_, KC_PSCR, KC_SLCK, KC_PAUS
-#define _ADJUST_NUMBERS_14_                RESET, _F_KEYS_1_TO_10_, KC_F11, KC_F12, KC_F13
+#define _ADJUST_FKEYS_17_                  RESET,  _F_KEYS_1_TO_13_, KC_PSCR, KC_SLCK, KC_PAUS
+#define _ADJUST_NUMBERS_14_                RESET,  _F_KEYS_1_TO_10_, KC_F11, KC_F12, KC_F13
+#define _ADJUST_NUMBERS_14_SAMUEL_         KC_GRV, _F_KEYS_1_TO_10_, KC_F11, KC_F12, RESET
 #define _ADJUST_NUMBERS_15_TA65_           _ADJUST_NUMBERS_14_, _2_BLANKS_
 #define _ADJUST_NUMBERS_17_IRON180_        _ADJUST_NUMBERS_14_, KC_F13, KC_INS, KC_HOME, KC_PGUP
 #define _ADJUST_ALPHAS1_12_                RESET,      _F_KEYS_1_TO_10_, KC_F11
