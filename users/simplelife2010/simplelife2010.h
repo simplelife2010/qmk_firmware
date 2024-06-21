@@ -155,7 +155,7 @@ enum userspace_layers {
 #define _ADJUST_ALPHAS1_15_                _ADJUST_ALPHAS1_14_, _______
 #define _ADJUST_ALPHAS1_17_                _ADJUST_ALPHAS1_14_, _3_BLANKS_
 #define _ADJUST_ALPHAS2_11_WO_SCLN_        _______,    _5_BLANKS_, _VIM_NAV_KEYS_, KC_ENTER
-#define _ADJUST_ALPHAS2_12_                _______,    _5_BLANKS_, _VIM_NAV_KEYS, _2_BLANKS_
+#define _ADJUST_ALPHAS2_12_                _______,    _5_BLANKS_, _VIM_NAV_KEYS_, _2_BLANKS_
 #define _ADJUST_ALPHAS2_13_                _______, KC_LEFT, KC_DOWN, KC_RGHT, _2_BLANKS_, _VIM_NAV_KEYS_, _3_BLANKS_
 #define _ADJUST_ALPHAS2_13_IRON180_        _______, KC_LEFT, KC_DOWN, KC_RGHT, _2_BLANKS_, _VIM_NAV_KEYS_, _4_BLANKS_
 #define _ADJUST_ALPHAS2_14_                _ADJUST_ALPHAS2_13_, _______

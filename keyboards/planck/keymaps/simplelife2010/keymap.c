@@ -30,13 +30,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _ADJUST_ALPHAS2_12_,
         _ADJUST_ALPHAS3_12_,
         _ADJUST_BTM_4MODS_2SPC_
-    ),
-
-    [_MOUSE] = LAYOUT_planck_2x2u_wrapper(
-        _MOUSE_ALPHAS1_12_,
-        _MOUSE_ALPHAS2_12_,
-        _MOUSE_ALPHAS3_12_,
-        _MOUSE_BTM_4MODS_2SPC_
     )
-
 };
