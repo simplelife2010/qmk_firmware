@@ -51,14 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _ADJUST_ALPHAS2_12_,
         _ADJUST_ALPHAS3_12_,
         _ADJUST_BTM_2MODS_2SPC_
-  ),
- 
-  [_MOUSE] = LAYOUT_split_3x6_3_wrapper(
-        _MOUSE_ALPHAS1_12_,
-        _MOUSE_ALPHAS2_12_,
-        _MOUSE_ALPHAS3_12_,
-        _MOUSE_BTM_2MODS_2SPC_
-  ),
+  )
 };
 
 #ifdef OLED_ENABLE
@@ -148,13 +141,14 @@ void oled_render_logo(void) {
     oled_write_P(crkbd_logo, false);
 }
 
-void oled_task_user(void) {
+bool oled_task_user(void) {
     if (is_keyboard_master()) {
         oled_render_layer_state();
         oled_render_keylog();
     } else {
         oled_render_logo();
     }
+    return false;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
