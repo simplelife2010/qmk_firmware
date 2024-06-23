@@ -30,13 +30,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _ADJUST_ALPHAS2_11_WO_SCLN_,
         _ADJUST_ALPHAS3_12_WO_SLASH_,
         _ADJUST_BTM_3MODS_3SPC_
-    ),
-
-    [_MOUSE] = LAYOUT_all_wrapper(
-        _MOUSE_ALPHAS1_12_,
-        _MOUSE_ALPHAS2_11_WO_SCLN_,
-        _MOUSE_ALPHAS3_12_WO_SLASH_,
-        _MOUSE_BTM_3MODS_3SPC_
     )
 };
 

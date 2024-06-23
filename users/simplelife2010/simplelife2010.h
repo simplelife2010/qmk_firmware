@@ -10,20 +10,11 @@ enum userspace_layers {
 };
 
 #define LOWER MO(_LOWER)
+#define LWR_SPC LT(_LOWER, KC_SPC)
 #define RSE_SPC LT(_RAISE, KC_SPC)
 #define ADJ_SPC LT(_ADJUST, KC_SPC)
+#define SLS_SFT RSFT_T(KC_SLSH)
 #define ADJUST MO(_ADJUST)
-
-#ifdef HOME_ROW_MODS
-    #define CTL_A LCTL_T(KC_A)
-    #define OPT_S LOPT_T(KC_S)
-    #define CMD_D LCMD_T(KC_D)
-    #define SFT_F LSFT_T(KC_F)
-    #define SFT_J RSFT_T(KC_J)
-    #define CMD_K RCMD_T(KC_K)
-    #define OPT_L ROPT_T(KC_L)
-    #define CTL_SCLN RCTL_T(KC_SCLN)
-#endif
 
 #define _VIM_NAV_KEYS_                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 #define _2_BLANKS_                         _______, _______
@@ -43,13 +34,8 @@ enum userspace_layers {
 #define _QWERTY1L_                         KC_Q,    KC_W,    KC_E,    KC_R,   KC_T
 #define _QWERTY1R_                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P
 #define _QWERTY1_                          _QWERTY1L_, _QWERTY1R_
-#ifdef HOME_ROW_MODS
-    #define _QWERTY2L_                         CTL_A,   OPT_S,   CMD_D,   SFT_F,  KC_G
-    #define _QWERTY2R_                         KC_H,    SFT_J,   CMD_K,   OPT_L,  CTL_SCLN
-#else
-    #define _QWERTY2L_                         KC_A,    KC_S,    KC_D,    KC_F,   KC_G
-    #define _QWERTY2R_                         KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN
-#endif
+#define _QWERTY2L_                         KC_A,    KC_S,    KC_D,    KC_F,   KC_G
+#define _QWERTY2R_                         KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN
 #define _QWERTY2_                          _QWERTY2L_, _QWERTY2R_
 #define _QWERTY3L_                         KC_Z,    KC_X,    KC_C,    KC_V,   KC_B
 #define _QWERTY3R_                         KC_N,    KC_M,    KC_COMM, KC_DOT, KC_SLSH
@@ -71,7 +57,7 @@ enum userspace_layers {
 #define _DOUBLE_SPACEBAR_ADJUST_LEFT_      ADJUST,   _______
 #define _DOUBLE_SPACEBAR_ADJUST_RIGHT_     _______,  ADJUST
 #define _DOUBLE_SPACEBAR_BTN1_RIGHT_       _______,  KC_BTN1
-#define _TRIPLE_SPACEBAR_LWR_ADJ_RSE_      LOWER,    ADJUST,  RSE_SPC
+#define _TRIPLE_SPACEBAR_LWR_ADJ_RSE_      LWR_SPC,  ADJ_SPC,  RSE_SPC
 #define _TRIPLE_SPACEBAR_ADJUST_LEFT_      ADJUST,   _______, _______
 #define _TRIPLE_SPACEBAR_ADJUST_RIGHT_     _______,  _______, ADJUST
 #define _TRIPLE_SPACEBAR_BTN1_RIGHT_       _______,  _______, KC_BTN1
@@ -99,7 +85,7 @@ enum userspace_layers {
 #define _QWERTY_ALPHAS2_14_                _QWERTY_ALPHAS2_13_, KC_PGUP
 #define _QWERTY_ALPHAS2_14_TA65_NOBSLS_    _QWERTY_ALPHAS2_13_, KC_ENT, KC_PGUP
 #define _QWERTY_ALPHAS3_12_                KC_LSFT,         _QWERTY3_,                               KC_RSFT
-#define _QWERTY_ALPHAS3_12_WO_SLASH_       KC_LSFT, ADJUST, _QWERTY3L_, KC_N, KC_M, KC_COMM, KC_DOT, KC_RSFT
+#define _QWERTY_ALPHAS3_12_WO_SLASH_       KC_LSFT, ADJUST, _QWERTY3L_, KC_N, KC_M, KC_COMM, KC_DOT, SLS_SFT 
 #define _QWERTY_ALPHAS3_13_DOUBLE_B_       KC_LSFT,         _QWERTY3L_, ADJUST, _QWERTY3R_,          KC_RSFT
 #define _QWERTY_ALPHAS3_12_                KC_LSFT, _QWERTY3_, KC_RSFT
 #define _QWERTY_ALPHAS3_13_                _QWERTY_ALPHAS3_12_, KC_UP
