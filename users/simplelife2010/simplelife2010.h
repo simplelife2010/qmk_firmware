@@ -79,7 +79,7 @@ enum userspace_layers {
 #define _QWERTY_ALPHAS2_11_WO_SCLN_        KC_ESC,          _QWERTY2_
 #define _QWERTY_ALPHAS2_12_                KC_ESC,          _QWERTY2_,                               KC_ENT
 #define _QWERTY_ALPHAS2_12_TAB_            KC_TAB,          _QWERTY2_,                               KC_ENT
-#define _QWERTY_ALPHAS2_13_                KC_ESC,  _QWERTY2_, KC_QUOT, KC_ENT
+#define _QWERTY_ALPHAS2_13_                KC_CAPS, _QWERTY2_, KC_QUOT, KC_ENT
 #define _QWERTY_ALPHAS2_13_SAMUEL_         KC_CAPS, _QWERTY2_, KC_QUOT, KC_ENT
 #define _QWERTY_ALPHAS2_13_IRON180_        KC_ESC,  _QWERTY2_, KC_QUOT, KC_NO, KC_ENT
 #define _QWERTY_ALPHAS2_14_                _QWERTY_ALPHAS2_13_, KC_PGUP
