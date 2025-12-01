@@ -47,5 +47,5 @@
         "no_proxy": "${localEnv:no_proxy}"
     },
     "runArgs": ["--group-add", "0"],
-    "onCreateCommand": "curl -fsSL https://install.qmk.fm | sh"
+    "onCreateCommand": "curl -fsSL https://install.qmk.fm | PYTHON_TARGET_VERSION=3.12 sh"
 }
