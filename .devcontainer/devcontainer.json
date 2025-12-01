@@ -1,0 +1,51 @@
+{
+    "name": "Python 3",
+    "build": {
+        "dockerfile": "Dockerfile",
+	"args": {
+            "HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+            "HTTPS_PROXY": "${localEnv:HTTPS_PROXY}",
+            "NO_PROXY": "${localEnv:NO_PROXY}",
+            "http_proxy": "${localEnv:http_proxy}",
+            "https_proxy": "${localEnv:https_proxy}",
+            "no_proxy": "${localEnv:no_proxy}"
+	}
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "configureZshAsDefaultShell": "true",
+            "installOhMyZsh": "false",
+            "installOhMyZshConfig": "false",
+            "username": "devcontainer"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "toolsToInstall": "basedpyright,mypy,pylint,pytest,ruff"
+        }
+    },
+    "remoteUser": "devcontainer",
+    "mounts": [
+        {
+            "source": "${localEnv:DEVCONTAINER_SSH_SOCK}",
+            "target": "${localEnv:DEVCONTAINER_SSH_SOCK}",
+            "type": "bind"
+        },
+        {
+            "source": "${localEnv:HOME}/.ssh/known_hosts",
+            "target": "/home/devcontainer/.ssh/known_hosts",
+            "type": "bind"
+        }
+    ],
+    "remoteEnv": {
+        "LANG": "en_US.UTF-8",
+        "SSH_AUTH_SOCK": "${localEnv:DEVCONTAINER_SSH_SOCK}",
+        "ZDOTDIR": "/home/devcontainer/.config/zsh",
+        "HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+        "HTTPS_PROXY": "${localEnv:HTTPS_PROXY}",
+        "NO_PROXY": "${localEnv:NO_PROXY}",
+        "http_proxy": "${localEnv:http_proxy}",
+        "https_proxy": "${localEnv:https_proxy}",
+        "no_proxy": "${localEnv:no_proxy}"
+    },
+    "runArgs": ["--group-add", "0"],
+    "onCreateCommand": "curl -fsSL https://install.qmk.fm | sh"
+}
